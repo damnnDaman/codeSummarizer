@@ -1,7 +1,8 @@
 import viteLogo from '/vite.svg'
 
 import { Link } from 'react-router-dom'
-import TextAnimation from './TextAnimation.jsx'
+import TextAnimation from './TitleTextAnimation.jsx'
+import TitleTextAnimation from './TitleTextAnimation.jsx'
 import { Editor } from './Editor.jsx'
 
 const Home = () => {
@@ -15,7 +16,7 @@ const Home = () => {
       {/* <Summarizer /> */}
 
       {/* <h2 className='text-4xl font-semibold '>Code Summarizer</h2> */}
-      <TextAnimation text="Code Comprehension" />
+      <TitleTextAnimation text="Code Comprehension" />
       <Editor />
 
 
