@@ -3,6 +3,7 @@ import viteLogo from '/vite.svg'
 import { Link } from 'react-router-dom'
 import TextAnimation from './TitleTextAnimation.jsx'
 import TitleTextAnimation from './TitleTextAnimation.jsx'
+import LanguagePicker from './LanguagePicker.jsx'
 import { Editor } from './Editor.jsx'
 
 const Home = () => {
@@ -17,9 +18,8 @@ const Home = () => {
 
       {/* <h2 className='text-4xl font-semibold '>Code Summarizer</h2> */}
       <TitleTextAnimation text="Code Comprehension" />
+      <LanguagePicker />
       <Editor />
-
-
     </div>
   )
 }

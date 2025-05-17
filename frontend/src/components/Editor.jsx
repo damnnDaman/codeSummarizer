@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Button from './Button.jsx';
+
+import { LanguageContext } from '../contexts/LanguageContext.jsx';
 
 export const Editor = () => {
     const [code, setCode] = useState('');
     const [explanation, setExplanation] = useState('');
     const [loading, setLoading] = useState(false);
+
+    const { curLanguage } = useContext(LanguageContext);
 
     const handleSummarize = async () => {
         setLoading(true);
@@ -18,7 +22,7 @@ export const Editor = () => {
             const response = await fetch('http://localhost:5000/api/explain', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ code, language: 'cpp' }),
+                body: JSON.stringify({ code, language: curLanguage }),
             });
 
             const data = await response.json();

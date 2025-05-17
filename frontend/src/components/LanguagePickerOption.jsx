@@ -1,7 +1,11 @@
 const LanguagePickerOption = ({children, ...otherProps}) => 
 {
     return (
-        <div className="text-white" {...otherProps} > {children} </div>
+        <div className="text-white cursor-pointer flex" {...otherProps} > 
+            <div className="flex items-center gap-2">
+                {children.name} {children.icon}
+            </div>
+        </div>
     )
 }
 
