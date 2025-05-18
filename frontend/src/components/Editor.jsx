@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Button from './Button.jsx';
 
 import { LanguageContext } from '../contexts/LanguageContext.jsx';
@@ -7,6 +7,7 @@ export const Editor = () => {
     const [code, setCode] = useState('');
     const [explanation, setExplanation] = useState('');
     const [loading, setLoading] = useState(false);
+    const [copyText, setCopyText] = useState('Copy');
 
     const { curLanguage } = useContext(LanguageContext);
 
@@ -37,10 +38,27 @@ export const Editor = () => {
         setLoading(false);
     };
 
-    const handleClear = () => {
+    const handleClear = () => 
+    {
         setCode('');
         setExplanation('');
     };
+
+    const handleCopy = () => 
+    {
+        navigator.clipboard.writeText(explanation)
+            .then(() => setCopyText('Copied'))
+            .catch(err => console.error('Failed to copy: ', err));
+    }
+
+    //If the text gets changed at all and the text says copy, return it to copy
+    useEffect(() => 
+    {
+        if (copyText === 'Copied')
+        {
+            setCopyText('Copy');
+        }
+    }, [code]);
 
     return (
         <div className='flex flex-col items-center justify-center my-2'>
@@ -51,20 +69,21 @@ export const Editor = () => {
                 onChange={e => setCode(e.target.value)}
             ></textarea>
 
-            <div className='flex flex-col md:flex-row justify-around w-3/4 mt-4 mb-1'>
+            {explanation && (
+                <div className="bg-gray-900 text-white rounded-lg border-2 mt-6 p-4 w-3/4 shadow">
+                    <h3 className="font-bold mb-2 text-lg">Explanation:</h3>
+                    <pre className="whitespace-pre-wrap">{explanation}</pre>
+                </div>
+            )}
+
+            <div className='flex flex-col md:flex-row justify-around w-3/4 mb-1'>
                 <Button onClick={handleSummarize} disabled={loading || !code}>
                     {loading ? 'Summarizing...' : 'Summarize'}
                 </Button>
                 <Button onClick={handleClear}>Clear</Button>
-                {/* Download button can be implemented as needed */}
+                {explanation && <Button onClick={handleCopy} disabled={copyText === 'Copied' || !explanation}>{copyText}</Button>}
             </div>
 
-            {explanation && (
-                <div className="bg-white text-black rounded-lg border mt-6 p-4 w-3/4 shadow">
-                    <h3 className="font-bold mb-2">Explanation:</h3>
-                    <pre className="whitespace-pre-wrap">{explanation}</pre>
-                </div>
-            )}
         </div>
     );
 };
