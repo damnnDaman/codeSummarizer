@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import Button from './Button.jsx';
 
 import { LanguageContext } from '../contexts/LanguageContext.jsx';
@@ -14,6 +14,7 @@ export const Editor = () => {
     const handleSummarize = async () => {
         setLoading(true);
         setExplanation('');
+        setCopyText('Copy');
 
         console.log('Code to be sent:', code);
 
@@ -50,15 +51,6 @@ export const Editor = () => {
             .then(() => setCopyText('Copied'))
             .catch(err => console.error('Failed to copy: ', err));
     }
-
-    //If the text gets changed at all and the text says copy, return it to copy
-    useEffect(() => 
-    {
-        if (copyText === 'Copied')
-        {
-            setCopyText('Copy');
-        }
-    }, [code]);
 
     return (
         <div className='flex flex-col items-center justify-center my-2'>
