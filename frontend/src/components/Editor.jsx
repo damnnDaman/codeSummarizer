@@ -15,10 +15,9 @@ export const Editor = () => {
         setExplanation('');
 
         console.log('Code to be sent:', code);
-        
+
         // Send the code to the backend for explanation
-        try 
-        {
+        try {
             const response = await fetch('http://localhost:5000/api/explain', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -30,12 +29,11 @@ export const Editor = () => {
 
             setExplanation(data.explanation || 'No explanation received.');
 
-        } catch (error) 
-        {
+        } catch (error) {
             console.error('Error fetching explanation:', error);
             setExplanation('Error fetching explanation. Please try again.');
         }
-        
+
         setLoading(false);
     };
 
@@ -47,13 +45,13 @@ export const Editor = () => {
     return (
         <div className='flex flex-col items-center justify-center my-2'>
             <textarea
-                className="bg-gray-900 text-white rounded-lg border-2 h-[65vh] w-3/4 border-gray-300 shadow-md p-4 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="font-mono bg-gray-900 text-white rounded-lg border-2 h-[65vh] w-3/4 border-gray-300 shadow-md p-4 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Paste your code here..."
                 value={code}
                 onChange={e => setCode(e.target.value)}
             ></textarea>
 
-            <div className='flex flex-col md:flex-row justify-around w-3/4 mt-4'>
+            <div className='flex flex-col md:flex-row justify-around w-3/4 mt-4 mb-1'>
                 <Button onClick={handleSummarize} disabled={loading || !code}>
                     {loading ? 'Summarizing...' : 'Summarize'}
                 </Button>
