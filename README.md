@@ -28,9 +28,9 @@ CodeSummarizer is a code comprehension project designed to help developers under
 ## Preview
 
 
-!(images.png)
+[!Logo](images.png)
 
-!(20250519-2002-05.3719253.mp4)
+[!Demo video](20250519-2002-05.3719253.mp4)
 *Demo.*
 
 ## Contributors
