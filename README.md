@@ -27,16 +27,16 @@ CodeSummarizer is a code comprehension project designed to help developers under
 
 ## Preview
 
+![Logo](image.png)
 
-[!Logo](images.png)
+<video src="video.mp4" controls width="600">
+   Demo.
+</video>
 
-[!Demo video](20250519-2002-05.3719253.mp4)
-*Demo.*
 
 ## Contributors
 
 @EvanGlaizel
-
 @damnnDaman
 
 ## License
