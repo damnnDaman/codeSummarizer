@@ -22,7 +22,7 @@ CodeSummarizer is a code comprehension project designed to help developers under
     python3 backend/app.py
     ```
     ```
-    npm run dev
+    frontend/npm run dev
     ```
 
 ## Preview
@@ -32,6 +32,8 @@ CodeSummarizer is a code comprehension project designed to help developers under
 <video src="video.mp4" controls width="600">
    Demo.
 </video>
+
+![Video](video.mp4)
 
 
 ## Contributors
