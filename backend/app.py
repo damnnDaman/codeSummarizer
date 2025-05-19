@@ -6,7 +6,7 @@ import os
 
 # 1. Load your API key from an environment variable (safer than hard-coding)
 API_KEY = os.getenv("GENAI_API_KEY")
-client  = genai.Client(api_key=API_KEY)
+client  = genai.Client(api_key='AIzaSyAjyc6b2tyjcHPwtD-XVEY40XEEhdd27Y0')
 
 app = Flask(__name__)
 CORS(app)   # allow React (and any other origin) to call your endpoints
@@ -19,9 +19,13 @@ def explain():
     
     # 2. Build a prompt around the incoming code
     prompt = (
-        f"Summarize the following {language} code:\n\n"
-        f"```{language}\n{code}\n```"
-    )
+    f"Here is some {language} code:\n"
+    f"```{language}\n{code.strip()}\n```\n"
+    "Please do the following:\n"
+    "1. Summarize what this code does in clear, concise English.\n"
+   
+   
+)
     
     # 3. Call Gemini via genai
     response = client.models.generate_content(

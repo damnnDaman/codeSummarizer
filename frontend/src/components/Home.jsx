@@ -1,6 +1,6 @@
-import viteLogo from '/vite.svg'
-
-import { Link } from 'react-router-dom'
+// import viteLogo from '/vite.svg'
+// import image from '../public/image.png'
+// import { Link } from 'react-router-dom'
 import TextAnimation from './TitleTextAnimation.jsx'
 import TitleTextAnimation from './TitleTextAnimation.jsx'
 import LanguagePicker from './LanguagePicker.jsx'
@@ -10,9 +10,9 @@ const Home = () => {
 
   return (
     <div className=''>
-      <Link to='/'>
-        {/* <img src={viteLogo} alt="Website logo" /> */}
-      </Link>
+      {/* <Link to='/'>
+        <img src={image} alt="Website logo" />
+      </Link> */}
       {/* <h1 className='bg-gray'>TITLE</h1> */}
       {/* <Summarizer /> */}
 

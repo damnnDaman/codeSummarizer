@@ -1,6 +1,7 @@
 // import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import React from 'react';
+// import image from '../../public/image.png'
 
 function TitleTextAnimation(text) {
 
@@ -16,7 +17,10 @@ function TitleTextAnimation(text) {
         // style={{ fontFamily: "sans-serif" }}
         className="border-2 color-white-200 font-semibold lg:text-6xl md:text-4xl sm:text-3xl text-2xl text-center p-5 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent"
 
-    >{text.text}</motion.div>
+    >{text.text}
+   
+    </motion.div>
+
 
 
 
