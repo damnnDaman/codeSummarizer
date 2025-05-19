@@ -6,7 +6,7 @@ import os
 
 # 1. Load your API key from an environment variable (safer than hard-coding)
 API_KEY = os.getenv("GENAI_API_KEY")
-client  = genai.Client(api_key='AIzaSyAjyc6b2tyjcHPwtD-XVEY40XEEhdd27Y0')
+client  = genai.Client(api_key=API_KEY)
 
 app = Flask(__name__)
 CORS(app)   # allow React (and any other origin) to call your endpoints
