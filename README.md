@@ -1,6 +1,7 @@
-# CodeSummarizer
+# CodeComprehension
 
-CodeSummarizer is a code comprehension project designed to help developers understand and summarize codebases efficiently.
+
+CodeComprehension is a code comprehension project designed to help developers understand and summarize codebases efficiently.
 
 ## Features
 
