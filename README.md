@@ -29,7 +29,7 @@ CodeSummarizer is a code comprehension project designed to help developers under
 
 ![Logo](image.png)
 
-<video src="Untitled video - Made with Clipchamp.mp4" controls width="600">
+<video src="video.mp4" controls width="600">
    Demo.
 </video>
 
