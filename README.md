@@ -28,14 +28,15 @@ CodeSummarizer is a code comprehension project designed to help developers under
 ## Preview
 
 
-![Lgo](images.png)
+!(images.png)
 
-![Detailed View](20250519-2002-05.3719253.mp4)
+!(20250519-2002-05.3719253.mp4)
 *Demo.*
 
 ## Contributors
 
 @EvanGlaizel
+
 @damnnDaman
 
 ## License
