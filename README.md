@@ -29,9 +29,10 @@ CodeSummarizer is a code comprehension project designed to help developers under
 
 ![Logo](image.png)
 
-<video src="video.mp4" controls width="600">
-   Demo.
-</video>
+![UI](p1.png)
+
+![Generated](p2.png)
+
 
 ![Video](video.mp4)
 
